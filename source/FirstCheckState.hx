@@ -15,13 +15,6 @@ class FirstCheckState extends MusicBeatState
 	{
 		FlxG.mouse.visible = false;
 
-		NGio.noLogin(APIStuff.API);
-
-		#if ng
-		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
-		trace('NEWGROUNDS LOL');
-		#end
-
 		PlayerSettings.init();
 		ModifierVariables.modifierSetup();
 		ModifierVariables.loadCurrent();
@@ -87,10 +80,11 @@ class FirstCheckState extends MusicBeatState
 			trace('fucking offline noob');
 			switch (_variables.firstTime)
 			{
-				case true:
-					FlxG.switchState(new FirstTimeState()); // First time language setting
-				case false:
-					FlxG.switchState(new VideoState('paint', new TitleState(), -1, false)); // First time language setting
+				default: // case true:
+					FlxG.switchState(new TitleState()); // First time language setting
+				/*case false:
+					FlxG.switchState(new VideoState('paint', new TitleState(), -1, false));
+				*/
 			}
 		}
 	}

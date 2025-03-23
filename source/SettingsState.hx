@@ -19,7 +19,7 @@ using StringTools;
 
 class SettingsState extends MusicBeatState
 {
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Options_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Options_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 
 	public static var page:Int = 0;
@@ -66,6 +66,7 @@ class SettingsState extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 

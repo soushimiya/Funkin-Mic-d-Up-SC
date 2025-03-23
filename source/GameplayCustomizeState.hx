@@ -44,7 +44,7 @@ class GameplayCustomizeState extends MusicBeatState
 		camHUD.bgColor.alpha = 0;
         FlxG.cameras.add(camHUD);
 
-        FlxCamera.defaultCameras = [camGame];
+        FlxG.cameras.setDefaultDrawTarget(camGame, true);
 
 		persistentUpdate = true;
 		persistentDraw = true;

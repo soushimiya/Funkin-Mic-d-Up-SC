@@ -53,7 +53,7 @@ class AnimationDebug extends MusicBeatState
 		camHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(camHUD);
 
-		FlxCamera.defaultCameras = [camBG];
+		FlxG.cameras.setDefaultDrawTarget(camBG, true);
 
 		FlxG.sound.music.stop();
 

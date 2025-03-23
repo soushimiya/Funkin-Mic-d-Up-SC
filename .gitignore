@@ -3,3 +3,5 @@ export/
 ._*
 source/APIStuff.hx
 art/flashFiles/RECOVER_BoyFriend_Assets.fla
+.DS_Store
+/.haxelib

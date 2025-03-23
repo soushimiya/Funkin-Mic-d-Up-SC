@@ -22,7 +22,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -272,7 +272,7 @@ class PlayState extends MusicBeatState
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
-		camHUD.alpha = 0;
+		//camHUD.alpha = 0;
 		camSus = new FlxCamera();
 		camSus.bgColor.alpha = 0;
 		camSus.alpha = 0;
@@ -336,10 +336,6 @@ class PlayState extends MusicBeatState
 			camNOTES.height = FlxG.width + 200;
 			camNOTEHUD.height = FlxG.width + 200;
 		}
-
-		// FlxG.cameras.setDefaultDrawTarget(camGame, true);
-		// ! DEPRECATED
-		FlxCamera.defaultCameras = [camGame];
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -1072,7 +1068,7 @@ class PlayState extends MusicBeatState
 		wiggleShit2.waveSpeed = 1.8; // fasto
 		wiggleShit2.shader.uTime.value = [(strumLine.y - Note.swagWidth * 4) / FlxG.height]; // from 4mbr0s3 2
 		var susWiggle2 = new ShaderFilter(wiggleShit2.shader);
-		camSus.setFilters([susWiggle]); // only enable it for snake notes
+		//camSus.filters = [susWiggle]; // only enable it for snake notes
 
 		strumLineNotes = new FlxTypedGroup<FlxSkewedSprite>();
 		add(strumLineNotes);
@@ -3792,7 +3788,6 @@ class PlayState extends MusicBeatState
 
 					if (SONG.validScore && !cheated && !_variables.botplay)
 					{
-						NGio.unlockMedal(60961);
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 

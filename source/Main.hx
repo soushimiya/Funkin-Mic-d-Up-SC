@@ -27,8 +27,6 @@ class Main extends Sprite
 	// You can pretty much ignore everything from here on - your code should go in your states.
 	public static var watermark:Sprite;
 
-	public var webmHandle:WebmHandler;
-
 	public static function main():Void
 	{
 		Lib.current.addChild(new Main());
@@ -78,17 +76,7 @@ class Main extends Sprite
 		initialState = FirstCheckState;
 		#end
 
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-
-		var ourSource:String = "assets/videos/dontDelete.webm";
-
-		var str1:String = "WEBM SHIT";
-		webmHandle = new WebmHandler();
-		webmHandle.source(ourSource);
-		webmHandle.makePlayer();
-		webmHandle.webm.name = str1;
-		addChild(webmHandle.webm);
-		GlobalVideo.setWebm(webmHandle);
+		addChild(new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);

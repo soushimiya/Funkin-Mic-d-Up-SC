@@ -3,7 +3,7 @@ package;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.util.FlxGradient;
 import Discord.DiscordClient;
 import flixel.FlxG;
@@ -38,7 +38,7 @@ class MenuFreeplay extends MusicBeatState
 	private var curPlaying:Bool = false;
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('fBG_Main'));
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Free_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Free_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Free_Bottom'));
 	var boombox:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('Boombox'));
@@ -102,6 +102,7 @@ class MenuFreeplay extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 

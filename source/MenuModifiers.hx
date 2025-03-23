@@ -43,7 +43,7 @@ typedef ModifierData = {
 class MenuModifiers extends MusicBeatState
 {
     var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('modiBG_Main'));
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Modi_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Modi_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0,0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Modi_Bottom'));
 	var arrs:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Modi_Arrows'));
@@ -95,6 +95,7 @@ class MenuModifiers extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0.07, 0.07);
 

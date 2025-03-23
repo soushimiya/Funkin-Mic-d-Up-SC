@@ -32,7 +32,7 @@ class MenuControls extends MusicBeatState
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('cBG_Main'));
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Cont_side'));
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Cont_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Cont_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 
 	var selectable:Bool = false;
@@ -53,6 +53,7 @@ class MenuControls extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 

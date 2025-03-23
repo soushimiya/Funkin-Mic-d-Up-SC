@@ -37,7 +37,7 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('mBG_Main'));
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Main_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Main_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 
 	var camLerp:Float = 0.1;
@@ -80,6 +80,7 @@ class MainMenuState extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 
@@ -182,11 +183,6 @@ class MainMenuState extends MusicBeatState
 				DiscordClient.changePresence("Back to the Title Screen.", null);
 
 				FlxG.switchState(new TitleStateReturn());
-			}
-
-			if (FlxG.keys.pressed.CONTROL && FlxG.keys.justPressed.R)
-			{
-				TitleState.restart();
 			}
 
 			if (controls.ACCEPT)

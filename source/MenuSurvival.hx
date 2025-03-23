@@ -29,7 +29,7 @@ class MenuSurvival extends MusicBeatState
 	public static var _survival:SurvivalVars;
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('sBG_Main'));
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Survival_Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Survival_Checker'));
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Survival_Side'));
 
@@ -85,6 +85,7 @@ class MenuSurvival extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
+		checker.velocity.set(0.2, 0.2);
 		add(checker);
 		checker.scrollFactor.set(0.07, 0.07);
 
